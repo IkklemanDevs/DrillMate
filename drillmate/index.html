@@ -4,10 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link href="/src/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./js/script-handler.js"></script>
     <title>DrillMate</title>
   </head>
-  <body>
-    <h1 class="font-bold">DrillMate</h1>
+
+  <body class="font-display px-3 py-1">
+
+    <header class="px-6 py-4 border-1 border-black">
+      <div class="flex flex-row justify-between">
+        <p class="">DrillMate</p>
+        <button class="" id="navMenu"><p>Menu</p></button>
+      </div>
+    </header>
+
+    <navbar class="hidden" id="navbar">
+      <div class="border-1 border-black text-center py-4">
+        <ul class="">
+          <li><button data-menu="dashboard">Dashboard</button></li>
+          <li><button data-menu="consumables">Consumables</button></li>
+          <li><button data-menu="history">History</button></li>
+          <li><button data-menu="profile">Profile</button></li>
+          <li><button data-menu="login">Sign In</button></li>
+        </ul>
+      </div>
+    </navbar>
+
+    <!-- Page Container -->
+    <div id="pageContainer">
+
+      <section id="dashboard" data-page="dashboard" class="hidden">
+        <p>Dashboard</p>
+      </section>
+
+      <section id="consumables" data-page="consumables" class="hidden">
+        <p>Consumables</p>
+      </section>
+
+      <section id="history" data-page="history" class="hidden">
+        <p>History</p>
+      </section>
+
+      <section id="profile" data-page="profile" class="hidden">
+        <p>Profile</p>
+      </section>
+
+      <section id="login" data-page="login" class="hidden">
+        <p>Log In</p>
+      </section>
+
+    </div>
+
   </body>
 </html>
