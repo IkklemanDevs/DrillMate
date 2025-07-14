@@ -47,5 +47,21 @@ function navListener() {
       console.warn(`Missing DOM Element for: ${key}`);
     }
   });
+  if (import.meta.env.DEV) {
+    const lastPage = localStorage.getItem('devPage');
+    const restorePage = contentTarget[lastPage];
+
+    if (lastPage && restorePage) {
+      console.log(`Restoring page from localStorage: ${lastPage}`);
+
+      // Hide all first
+      Object.values(contentTarget).forEach(page => {
+        page.classList.add('hidden');
+      });
+
+      // Show restored page
+      restorePage.classList.remove('hidden');
+    }
+  }
 }
 

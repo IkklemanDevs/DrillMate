@@ -37,25 +37,96 @@
 
     <!-- Page Container -->
     <div id="pageContainer">
-
-      <section id="dashboard" data-page="dashboard" class="hidden">
-        <p>Dashboard</p>
+      
+      <section id="dashboard" data-page="dashboard" class="hidden pt-4">
+        <div class="text-center">
+          <h3>Dashboard</h3>
+        </div>
+<!-- Dashboard Content -->
+        <div>
+          <!-- Shift Overview (banner)-->
+          <div class="border-1 rounded-sm mt-4 pt-1">
+            <div class="mb-4">
+              <p class="text-center">Shift Overview</p>
+            </div>
+            <div class="flex justify-between mx-1 text-center gap-x-8">
+              <ul class="text-sm w-32">
+                <li>Total Meters:</li>
+                <li>128.9m</li>
+              </ul>
+              <ul class="text-sm w-32">
+                <li>Average Duration:</li>
+                <li>46m 24s</li>
+              </ul>
+              <ul class="text-sm w-32">
+                <li>Projected Meters:</li>
+                <li>174.2m</li>
+              </ul>
+            </div>
+          </div>
+            <!-- Log and Stats Container -->
+            <div class="flex flex-col md:flex-row w-full justify-between my-4 gap-4">
+              <!-- Drill Log -->
+              <div class="border-1 rounded-sm h-dvh px-2 md:w-1/2">
+                <div class="">
+                  <ul class="flex flex-row justify-between">
+                    <li>Add</li>
+                    <li>Drill Log</li>
+                    <li>Edit</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="flex justify-between text-sm gap-x-8 pt-2">
+                    <li class="">Hole Number</li>
+                    <li class="">Designed Depth</li>
+                    <li class="">Drill Depth</li> 
+                  </ul>
+                </div>
+                <!-- Form Target -->
+                <div class="pt-1">
+                  <ul class="flex justify-between text-sm gap-x-8 pt-2">
+                    <li>1892</li>
+                    <li class="">12.1m</li>
+                    <li class="">12.4m</li> 
+                  </ul>
+                </div>
+              </div>
+              <!-- Shift + Drill Statistics -->
+              <div class="border-1 rounded-sm px-2 md:w-1/2">
+                <div class="text-center">
+                  <p>Shift Statistics</p>
+                </div>
+                <!-- Weekly Bar Chart -->
+                <div class="w-full flex grow">
+                  <canvas id="weeklyPerformance"></canvas>
+                </div>
+              </div>
+            </div>
+        </div>
       </section>
-
-      <section id="consumables" data-page="consumables" class="hidden">
-        <p>Consumables</p>
+<!-- Consumables Content -->
+      <section id="consumables" data-page="consumables" class="hidden pt-2">
+        <div class="text-center">
+          <h3>Consumables</h3>
+        </div>
       </section>
-
-      <section id="history" data-page="history" class="hidden">
-        <p>History</p>
+<!-- History Content -->
+      <section id="history" data-page="history" class="hidden pt-2">
+        <div class="text-center">
+          <h3>History</h3>
+        </div>
       </section>
-
-      <section id="profile" data-page="profile" class="hidden">
-        <p>Profile</p>
+<!-- Profile Content -->
+      <section id="profile" data-page="profile" class="hidden pt-2">
+        <div class="text-center">
+          <h3>Profile</h3>
+        </div>
       </section>
-
-      <section id="login" data-page="login" class="hidden">
-        <p>Log In</p>
+<!-- Login Content -->
+      <section id="login" data-page="login" class="hidden pt-2">
+        <div class="text-center">
+          <h3>Log In</h3>
+        </div>
       </section>
 
     </div>
