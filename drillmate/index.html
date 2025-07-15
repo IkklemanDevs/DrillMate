@@ -14,9 +14,9 @@
     <title>DrillMate</title>
   </head>
 
-  <body class="font-display px-3 py-1">
+  <body class="font-display">
 
-    <header class="px-6 py-4 border-1 border-black">
+    <header class="px-6 py-4 sticky top-0 bg-gray-200 md:relative">
       <div class="flex flex-row justify-between">
         <p class="">DrillMate</p>
         <button class="" id="navMenu"><p>Menu</p></button>
@@ -36,7 +36,7 @@
     </navbar>
 
     <!-- Page Container -->
-    <div id="pageContainer">
+    <div id="pageContainer" class="px-3 py-1">
       
       <section id="dashboard" data-page="dashboard" class="hidden pt-4">
         <div class="text-center">
@@ -94,11 +94,22 @@
               <!-- Shift + Drill Statistics -->
               <div class="border-1 rounded-sm px-2 md:w-1/2">
                 <div class="text-center">
-                  <p>Shift Statistics</p>
+                  <p>Weekly Statistics</p>
                 </div>
+                <!-- TODO: Time Frame Dropdown -->
                 <!-- Weekly Bar Chart -->
                 <div class="w-full flex grow">
                   <canvas id="weeklyPerformance"></canvas>
+                </div>
+                <div class="flex flex-row justify-between mt-2 text-center">
+                  <div>
+                    <p>Total Meters:</p>
+                    <p>478.1m</p>
+                  </div>
+                  <div>
+                    <p>Projected Meters:</p>
+                    <p>478.1m</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@
 @theme {
     --font-display: "Raleway", sans-serif;
 /* Dark Mode */
-    --color-*: initial;
+    /* --color-*: initial; */
     --color-bg-dark: hsl(0 0% 0%);
     --color-bg: hsl(0 0% 5%);
     --color-bg-light: hsl(0 0% 10%);
@@ -20,4 +20,5 @@
 
 button:hover {
     cursor: pointer;
+    
 }
