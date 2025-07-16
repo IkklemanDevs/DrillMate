@@ -24,7 +24,7 @@
     </header>
 
     <navbar class="hidden" id="navbar">
-      <div class="border-1 border-black text-center py-4">
+      <div class="text-center py-4">
         <ul class="">
           <li><button data-menu="dashboard">Dashboard</button></li>
           <li><button data-menu="consumables">Consumables</button></li>
@@ -45,11 +45,11 @@
 <!-- Dashboard Content -->
         <div>
           <!-- Shift Overview (banner)-->
-          <div class="border-1 rounded-sm mt-4 pt-1">
-            <div class="mb-4">
+          <div class="border-1 rounded-sm mt-2 pt-1">
+            <div class="my-2">
               <p class="text-center">Shift Overview</p>
             </div>
-            <div class="flex justify-between mx-1 text-center gap-x-8">
+            <div class="flex justify-between m-2 text-center gap-x-8">
               <ul class="text-sm w-32">
                 <li>Total Meters:</li>
                 <li>128.9m</li>
@@ -67,23 +67,28 @@
             <!-- Log and Stats Container -->
             <div class="flex flex-col md:flex-row w-full justify-between my-4 gap-4">
               <!-- Drill Log -->
-              <div class="border-1 rounded-sm h-dvh px-2 md:w-1/2">
+              <div class="border-1 rounded-sm min-h-[250px] px-2 md:w-1/2">
                 <div class="">
-                  <ul class="flex flex-row justify-between">
+                  <ul class="flex flex-row justify-between my-2">
                     <li>Add</li>
                     <li>Drill Log</li>
                     <li>Edit</li>
                   </ul>
                 </div>
-                <div>
+                <!-- Drill Log Placeholder -->
+                  <div class="text-center text-gray-400 text-sm italic py-8">
+                    No drill data yet. Add a new entry to get started.
+                  </div>
+                <!-- Form Labels -->
+                <div class="hidden">
                   <ul class="flex justify-between text-sm gap-x-8 pt-2">
-                    <li class="">Hole Number</li>
-                    <li class="">Designed Depth</li>
-                    <li class="">Drill Depth</li> 
+                    <li class="">Hole Number:</li>
+                    <li class="">Designed Depth:</li>
+                    <li class="">Drill Depth:</li> 
                   </ul>
                 </div>
                 <!-- Form Target -->
-                <div class="pt-1">
+                <div class="p-2 hidden">  
                   <ul class="flex justify-between text-sm gap-x-8 pt-2">
                     <li>1892</li>
                     <li class="">12.1m</li>
@@ -93,7 +98,7 @@
               </div>
               <!-- Shift + Drill Statistics -->
               <div class="border-1 rounded-sm px-2 md:w-1/2">
-                <div class="text-center">
+                <div class="text-center my-2">
                   <p>Weekly Statistics</p>
                 </div>
                 <!-- TODO: Time Frame Dropdown -->
@@ -101,14 +106,22 @@
                 <div class="w-full flex grow">
                   <canvas id="weeklyPerformance"></canvas>
                 </div>
-                <div class="flex flex-row justify-between mt-2 text-center">
-                  <div>
+                <div class="flex flex-wrap justify-between mt-2 text-center">
+                  <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Total Meters:</p>
-                    <p>478.1m</p>
+                    <p>378.7m</p>
                   </div>
-                  <div>
+                  <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Projected Meters:</p>
                     <p>478.1m</p>
+                  </div>
+                  <div class="basis-1/2 md:basis-1/4 p-2">
+                    <p>Average Shift:</p>
+                    <p>78.1m</p>
+                  </div>
+                  <div class="basis-1/2 md:basis-1/4 p-2">
+                    <p>Accumulative Meters:</p>
+                    <p>4578.4m</p>
                   </div>
                 </div>
               </div>
