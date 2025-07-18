@@ -38,14 +38,14 @@
     <!-- Page Container -->
     <div id="pageContainer" class="px-3 py-1">
       
-      <section id="dashboard" data-page="dashboard" class="hidden pt-4">
-        <div class="text-center">
+      <section id="dashboard" data-page="dashboard" class="hidden m-1">
+        <div class="text-center m-4">
           <h3>Dashboard</h3>
         </div>
 <!-- Dashboard Content -->
         <div>
           <!-- Shift Overview (banner)-->
-          <div class="border-1 rounded-sm mt-2 pt-1">
+          <div class="border-1 rounded-sm  p-1">
             <div class="my-2">
               <p class="text-center">Shift Overview</p>
             </div>
@@ -55,8 +55,8 @@
                 <li>128.9m</li>
               </ul>
               <ul class="text-sm w-32">
-                <li>Average Duration:</li>
-                <li>46m 24s</li>
+                <li>Penetration Rate:</li>
+                <li>0.4 m/min</li>
               </ul>
               <ul class="text-sm w-32">
                 <li>Projected Meters:</li>
@@ -70,9 +70,9 @@
               <div class="border-1 rounded-sm min-h-[250px] px-2 md:w-1/2">
                 <div class="">
                   <ul class="flex flex-row justify-between my-2">
-                    <li>Add</li>
+                    <li><button>Add</button></li>
                     <li>Drill Log</li>
-                    <li>Edit</li>
+                    <li><button>Edit</button></li>
                   </ul>
                 </div>
                 <!-- Drill Log Placeholder -->
@@ -95,6 +95,51 @@
                     <li class="">12.4m</li> 
                   </ul>
                 </div>
+                <!-- Drill Log Form -->
+                 <div>
+                    <form class="formCard">
+                      <div>
+                        <p>Hole Data Input</p>
+                      </div>
+                      <div>
+                        <label for="holeType" class="block text-sm font-medium">Hole Type</label>
+                        <select id="holeType" name="holeType" class="mt-1 block w-full border p-2 rounded">
+                          <option value="">Choose an option</option>
+                          <option value="production">Production</option>
+                          <option value="infill">Infill</option>
+                          <option value="angle">Angle</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="holeAngle" class="block text-sm font-medium">Hole Angle</label>
+                        <select id="holeAngle" name="holeAngle" class="mt-1 block w-full border p-2 rounded" required>
+                          <option value="">Select Angle</option>
+                          <option value="ninty">90</option>
+                          <option value="eighty">80</option>
+                          <option value="seventy">70</option>
+                          <option value="sixty">60</option>
+                        </select>
+                      </div>
+                      <div class="space-x-1 inline">
+                        <input id="keepConfig" type="checkbox">
+                        <label for="keepConfig" class="">Remember Selection</label>
+                      </div>
+                      <div class="w-full">
+                          <label class="formLabel">Hole Number:</label>
+                          <input type="text" placeholder="D1722" class="formInputBox">
+                      </div>
+                      <div class="w-full flex justify-between flex-row">
+                        <div class="w-1/2">
+                          <label class="formLabel">Designed Depth:</label>
+                          <input class="formInputBox" placeholder="11.7m">
+                        </div>
+                        <div class="w-1/2">
+                          <label class="formLabel">Drilled Depth:</label>
+                          <input class="formInputBox" placeholder="12.1m">
+                        </div>
+                      </div>
+                    </form>
+                 </div>
               </div>
               <!-- Shift + Drill Statistics -->
               <div class="border-1 rounded-sm px-2 md:w-1/2">
@@ -103,7 +148,7 @@
                 </div>
                 <!-- TODO: Time Frame Dropdown -->
                 <!-- Weekly Bar Chart -->
-                <div class="w-full flex grow">
+                <div class="w-full min-h-[250px] md:h-[400px]">
                   <canvas id="weeklyPerformance"></canvas>
                 </div>
                 <div class="flex flex-wrap justify-between mt-2 text-center">

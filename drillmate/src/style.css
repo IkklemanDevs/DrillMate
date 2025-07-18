@@ -22,3 +22,15 @@ button:hover {
     cursor: pointer;
     
 }
+
+.formCard {
+  @apply p-4 m-2 bg-white rounded-md shadow-md space-y-4 border border-gray-200 flex flex-col;
+}
+
+.formInputBox {
+    @apply bg-white rounded-sm shadow-sm  border border-gray-200 px-1 max-w-1/3
+}
+
+.formLabel {
+    @apply text-sm font-medium block
+}
