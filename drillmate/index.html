@@ -76,29 +76,20 @@
                   </ul>
                 </div>
                 <!-- Drill Log Placeholder -->
-                  <div class="text-center text-gray-400 text-sm italic py-8">
+                  <div class="text-center text-gray-400 text-sm italic py-8 hidden">
                     No drill data yet. Add a new entry to get started.
                   </div>
-                <!-- Form Labels -->
-                <div class="hidden">
-                  <ul class="flex justify-between text-sm gap-x-8 pt-2">
-                    <li class="">Hole Number:</li>
-                    <li class="">Designed Depth:</li>
-                    <li class="">Drill Depth:</li> 
-                  </ul>
-                </div>
                 <!-- Form Target -->
-                <div class="p-2 hidden">  
-                  <ul class="flex justify-between text-sm gap-x-8 pt-2">
-                    <li>1892</li>
-                    <li class="">12.1m</li>
-                    <li class="">12.4m</li> 
-                  </ul>
+                <div class="drillLogCard">
+                  <div class="w-full flex justify-between">  
+                    <p class="w-full text-center">#1890</p>
+                    <p>V</p>
+                  </div>
                 </div>
                 <!-- Drill Log Form -->
-                 <div>
+                 <div class="">
                     <form class="formCard">
-                      <div>
+                      <div class="text-center">
                         <p>Hole Data Input</p>
                       </div>
                       <div>
@@ -124,17 +115,23 @@
                         <input id="keepConfig" type="checkbox">
                         <label for="keepConfig" class="">Remember Selection</label>
                       </div>
-                      <div class="w-full">
-                          <label class="formLabel">Hole Number:</label>
-                          <input type="text" placeholder="D1722" class="formInputBox">
+                      <div class="w-full flex justify-between flex-row">
+                        <div class="w-1/2 pr-2">
+                            <label class="formLabelNB">Hole Number:</label>
+                            <input type="text" placeholder="D1722" class="formInputBox">
+                        </div>
+                        <div class="w-1/2">
+                          <label class="formLabelNB">Time Started:</label>
+                          <input type="time" class="formInputBox">
+                        </div>
                       </div>
                       <div class="w-full flex justify-between flex-row">
-                        <div class="w-1/2">
-                          <label class="formLabel">Designed Depth:</label>
+                        <div class="w-1/2 pr-2">
+                          <label class="formLabelNB">Designed Depth:</label>
                           <input class="formInputBox" placeholder="11.7m">
                         </div>
                         <div class="w-1/2">
-                          <label class="formLabel">Drilled Depth:</label>
+                          <label class="formLabelNB">Drilled Depth:</label>
                           <input class="formInputBox" placeholder="12.1m">
                         </div>
                       </div>

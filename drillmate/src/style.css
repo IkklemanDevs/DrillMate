@@ -28,9 +28,17 @@ button:hover {
 }
 
 .formInputBox {
-    @apply bg-white rounded-sm shadow-sm  border border-gray-200 px-1 max-w-1/3
+    @apply bg-white rounded-sm shadow-sm  border border-gray-200 px-1 w-full
 }
 
 .formLabel {
     @apply text-sm font-medium block
+}
+
+.formLabelNB {
+    @apply text-sm font-medium
+}
+
+.drillLogCard {
+    @apply border-1 border-black px-2 py-1
 }
