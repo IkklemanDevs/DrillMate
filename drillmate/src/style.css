@@ -24,7 +24,7 @@ button:hover {
 }
 
 .formCard {
-  @apply p-4 m-2 bg-white rounded-md shadow-md space-y-4 border border-gray-200 flex flex-col;
+    @apply p-4 m-2 bg-white rounded-md shadow-md space-y-4 border border-gray-200 flex flex-col;
 }
 
 .formInputBox {
@@ -40,5 +40,5 @@ button:hover {
 }
 
 .drillLogCard {
-    @apply border-1 border-black px-2 py-1
+    @apply border-1 border-black px-2 py-1 mb-1 text-sm
 }
