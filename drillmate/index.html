@@ -76,40 +76,35 @@
                   </ul>
                 </div>
                 <!-- Drill Log Placeholder -->
-                  <div class="text-center text-gray-400 text-sm italic py-8 hidden">
+                  <div class="text-center text-gray-400 text-sm italic py-8">
                     No drill data yet. Add a new entry to get started.
                   </div>
                 <!-- Form Target -->
-                <div class="drillLogCard">
-                  <div class="w-full flex justify-between">  
-                    <p class="w-full text-center">#1890</p>
-                    <p>V</p>
-                  </div>
-                  <!-- Collapsable Hole Information -->
-                  <div class="flex flex-row justify-between p-2">
-                    <div>
-                      <ul class="justify-start space-y-4">
-                        <li>Designed Depth: 12.1m</li>
-                        <li>Drilled Depth: 12.6m</li>
-                      </ul>
-                    </div>
-                    <div class="justify-end text-right">
-                      <ul class="space-y-4">
-                        <li>Production - 90º</li>
-                        <li>Time Started: 06:30 am</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- Temporary Hole for Visualisation -->
-                <div class="drillLogCard">
+                <div class="drillLogCard hidden">
                   <div class="w-full flex justify-between">  
                     <p class="w-full text-center">#1867</p>
                     <p>V</p>
                   </div>
+                  <!-- Collapsable Hole Information -->
+                  <div class="flex flex-row justify-between p-2 hidden">
+                    <div>
+                      <ul class="justify-start space-y-4">
+                        <li>Designed Depth: 12.1m</li>
+                        <li>Drilled Depth: 12.6m</li>
+                        <li>Hammer: AMS 00112-4234-B</li>
+                      </ul>
+                    </div>
+                    <div class="justify-end text-right">
+                      <ul class="space-y-4">
+                        <li>Penetration Rate: 0.3m/min</li>
+                        <li>Time Started: 06:30 am</li>
+                        <li>Drill Bit: AMS 05512-0680-HD</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <!-- Drill Log Form -->
-                 <div class="">
+                 <div class="hidden">
                     <form class="formCard">
                       <div class="text-center">
                         <p>Hole Data Input</p>
