@@ -35,9 +35,9 @@
       </div>
     </navbar>
 
-    <!-- Page Container -->
+<!-- Page Container -->
     <div id="pageContainer" class="px-3 py-1">
-      
+<!-- Dashboard Content -->
       <section id="dashboard" data-page="dashboard" class="hidden m-1">
         <div class="text-center m-4">
           <h3>Dashboard</h3>
@@ -188,31 +188,132 @@
         </div>
       </section>
 <!-- Consumables Content -->
-      <section id="consumables" data-page="consumables" class="hidden pt-2">
-        <div class="text-center">
+      <section id="consumables" data-page="consumables" class="hidden m-1">
+        <div class="text-center m-4">
           <h3>Consumables</h3>
+        </div>
+        <div>
+          <!-- Current Equipment Banner -->
+          <div class="border-1 rounded-sm  p-1">
+            <div class="my-2">
+              <p class="text-center">Current Equipment:</p>
+            </div>
+            <div class="flex justify-between m-2 text-center gap-x-8">
+              <ul class="text-sm w-32">
+                <li>Current Bit:</li>
+                <li>AMS 005512-0114-HD</li>
+              </ul>
+              <ul class="text-sm w-32">
+                <li>Current Hammer:</li>
+                <li>AMS 001103-0012-R</li>
+              </ul>  
+            </div>
+            <div class="text-center">
+              <button class="pt-2 italic text-sm font-light">Change Equipment</button>
+            </div>
+          </div>
+          <!-- New Consumable Form -->
+          <div class="my-4 border-1 rounded-sm p-1 px-2">
+            <form>
+              <div class="text-center mt-2 mb-4">
+                <p>Enter/Select New Consumable</p>
+              </div>
+              <div class="text-center">
+                <label>Consumable Type:</label>
+                <select>
+                  <option>Drill Bit</option>
+                  <option>Drill Hammer</option>
+                  <option>Adaptor Sub</option>
+                  <option>Rod</option>
+                </select>
+              </div>
+              <div class="flex justify-between gap-x-8 my-2">
+                <div class="max-w-48">
+                  <label>Manufacturer:</label>
+                  <input type="text" placeholder="AMS" class="formInputBox">
+                </div>
+                <div class="max-w-48">
+                  <label>Serial Number:</label>
+                  <input type="text" placeholder="005512-0114-HD" class="formInputBox">
+                </div>
+              </div>
+              <div class="flex justify-between gap-x-8 my-2">
+                <div class="max-w-48">
+                  <label>Diameter</label>
+                  <input type="text" class="formInputBox" placeholder="165mm">
+                </div>
+                <div class="max-w-48 flex flex-row gap-x-15">
+                  <div class="">
+                    <input type="checkbox">
+                    <label>New</label>
+                  </div>
+                  <div>
+                    <input type="checkbox">
+                    <label>Run Out</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- Consumable Statistics -->
+          <div class="border-1 rounded-sm my-4 px-2 md:w-1/2">
+            <div class="text-center my-2">
+              <p>Consumamble Statistics</p>
+            </div>
+            <!-- Consumable Statistics -->
+            <div class="w-full min-h-[250px] md:h-[400px]">
+              <canvas id="consumablePerformance"></canvas>
+            </div>
+            <!-- Consumable Selector -->
+            <div>
+              <form class="text-center italic font-light my-4">
+                <label for="consChartSelect">Select Consumable Type:</label>
+                <select id="consChartSelect" class="hover:cursor-pointer">
+                  <option value="consChartBit">Drill Bit</option>
+                  <option value="consChartHammer">Hammer</option>
+                </select>
+              </form>
+              </div>
+            <!-- Consumable Metrics -->
+            <div class="flex flex-wrap justify-between mt-2 text-center">
+              <div class="basis-1/2 md:basis-1/4 p-2">
+                <p>Current Meters:</p>
+                <p>178.7m</p>
+              </div>
+              <div class="basis-1/2 md:basis-1/4 p-2">
+                <p>Average Meters:</p>
+                <p>270.1m</p>
+              </div>
+              <div class="basis-1/2 md:basis-1/4 p-2">
+                <p>Consumable Manufacturer:</p>
+                <p>AMS</p>
+              </div>
+              <div class="basis-1/2 md:basis-1/4 p-2">
+                <p>Serial Number:</p>
+                <p>005512-0114-HD</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 <!-- History Content -->
-      <section id="history" data-page="history" class="hidden pt-2">
-        <div class="text-center">
+      <section id="history" data-page="history" class="hidden m-1">
+        <div class="text-center m-4">
           <h3>History</h3>
         </div>
       </section>
 <!-- Profile Content -->
-      <section id="profile" data-page="profile" class="hidden pt-2">
-        <div class="text-center">
+      <section id="profile" data-page="profile" class="hidden m-1">
+        <div class="text-center m-4">
           <h3>Profile</h3>
         </div>
       </section>
 <!-- Login Content -->
-      <section id="login" data-page="login" class="hidden pt-2">
-        <div class="text-center">
+      <section id="login" data-page="login" class="hidden m-1">
+        <div class="text-center m-4">
           <h3>Log In</h3>
         </div>
       </section>
-
     </div>
-
   </body>
 </html>
