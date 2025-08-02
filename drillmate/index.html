@@ -52,15 +52,15 @@
             <div class="flex justify-between m-2 text-center gap-x-8">
               <ul class="text-sm w-32">
                 <li>Total Meters:</li>
-                <li>128.9m</li>
+                <li id="soTotalMeters">128.9m</li>
               </ul>
               <ul class="text-sm w-32">
                 <li>Average Penetration Rate:</li>
-                <li>0.4 m/min</li>
+                <li id="soAvgPenRate">0.4 m/min</li>
               </ul>
               <ul class="text-sm w-32">
                 <li>Projected Meters:</li>
-                <li>174.2m</li>
+                <li id="soProjMeters">174.2m</li>
               </ul>
             </div>
           </div>
@@ -70,23 +70,23 @@
               <div class="border-1 rounded-sm min-h-[250px] px-2 md:w-1/2">
                 <div class="">
                   <ul class="flex flex-row justify-between my-2">
-                    <li><button>Add</button></li>
+                    <li><button id="newHoleEntry">Add</button></li>
                     <li>Drill Log</li>
-                    <li><button>Edit</button></li>
+                    <li><button id="editHoleEntry">Edit</button></li>
                   </ul>
                 </div>
                 <!-- Drill Log Placeholder -->
                   <div class="text-center text-gray-400 text-sm italic py-8">
                     No drill data yet. Add a new entry to get started.
                   </div>
-                <!-- Form Target -->
+                <!-- Form Target // Drill Log Card-->
                 <div class="drillLogCard hidden">
                   <div class="w-full flex justify-between">  
                     <p class="w-full text-center">#1867</p>
                     <p>V</p>
                   </div>
                   <!-- Collapsable Hole Information -->
-                  <div class="flex flex-row justify-between p-2 hidden">
+                  <div class="flex flex-row justify-between p-2">
                     <div>
                       <ul class="justify-start space-y-4">
                         <li>Designed Depth: 12.1m</li>
@@ -104,7 +104,7 @@
                   </div>
                 </div>
                 <!-- Drill Log Form -->
-                 <div class="hidden">
+                 <div class="hidden" id="drillForm">
                     <form class="formCard">
                       <div class="text-center">
                         <p>Hole Data Input</p>
@@ -134,22 +134,22 @@
                       </div>
                       <div class="w-full flex justify-between flex-row">
                         <div class="w-1/2 pr-2">
-                            <label class="formLabelNB">Hole Number:</label>
-                            <input type="text" placeholder="D1722" class="formInputBox">
+                            <label class="formLabelNB" for="holeNumber">Hole Number:</label>
+                            <input id="holeNumber" type="text" placeholder="D1722" class="formInputBox">
                         </div>
                         <div class="w-1/2">
-                          <label class="formLabelNB">Time Started:</label>
-                          <input type="time" class="formInputBox">
+                          <label for="holeTime" class="formLabelNB">Time Started:</label>
+                          <input id="holeTime" type="time" class="formInputBox">
                         </div>
                       </div>
                       <div class="w-full flex justify-between flex-row">
                         <div class="w-1/2 pr-2">
-                          <label class="formLabelNB">Designed Depth:</label>
-                          <input class="formInputBox" placeholder="11.7m">
+                          <label for="designDepth" class="formLabelNB">Designed Depth:</label>
+                          <input id="designDepth" class="formInputBox" placeholder="11.7m">
                         </div>
                         <div class="w-1/2">
-                          <label class="formLabelNB">Drilled Depth:</label>
-                          <input class="formInputBox" placeholder="12.1m">
+                          <label for="drilledDepth" class="formLabelNB">Drilled Depth:</label>
+                          <input id="drilledDepth" class="formInputBox" placeholder="12.1m">
                         </div>
                       </div>
                     </form>
@@ -168,19 +168,19 @@
                 <div class="flex flex-wrap justify-between mt-2 text-center">
                   <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Total Meters:</p>
-                    <p>378.7m</p>
+                    <p id="statTotalMeters">378.7m</p>
                   </div>
                   <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Projected Meters:</p>
-                    <p>478.1m</p>
+                    <p id="statProjMeters">478.1m</p>
                   </div>
                   <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Average Shift:</p>
-                    <p>78.1m</p>
+                    <p id="statAvgMeters">78.1m</p>
                   </div>
                   <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Accumulative Meters:</p>
-                    <p>4578.4m</p>
+                    <p id="statAccumMeters">4578.4m</p>
                   </div>
                 </div>
               </div>
@@ -201,11 +201,11 @@
             <div class="flex justify-between m-2 text-center gap-x-8">
               <ul class="text-sm w-32">
                 <li>Current Bit:</li>
-                <li>AMS 005512-0114-HD</li>
+                <li id="currentBit">AMS 005512-0114-HD</li>
               </ul>
               <ul class="text-sm w-32">
                 <li>Current Hammer:</li>
-                <li>AMS 001103-0012-R</li>
+                <li id="currentHammer">AMS 001103-0012-R</li>
               </ul>  
             </div>
             <div class="text-center">
@@ -213,44 +213,35 @@
             </div>
           </div>
           <!-- New Consumable Form -->
-          <div class="my-4 border-1 rounded-sm p-1 px-2">
+          <div id="consFormCont" class="my-4 border-1 rounded-sm p-1 px-2 hidden">
             <form>
               <div class="text-center mt-2 mb-4">
-                <p>Enter/Select New Consumable</p>
+                <p>Enter New Consumable</p>
               </div>
               <div class="text-center">
-                <label>Consumable Type:</label>
-                <select>
-                  <option>Drill Bit</option>
-                  <option>Drill Hammer</option>
-                  <option>Adaptor Sub</option>
-                  <option>Rod</option>
+                <label for="consType">Consumable Type:</label>
+                <select id="consType">
+                  <option>-- Select --</option>
+                  <option value="consTypeBit">Drill Bit</option>
+                  <option value="consTypeHammer">Drill Hammer</option>
+                  <option value="consTypeSub">Adaptor Sub</option>
+                  <option value="consTypeRod">Rod</option>
                 </select>
               </div>
               <div class="flex justify-between gap-x-8 my-2">
-                <div class="max-w-48">
-                  <label>Manufacturer:</label>
-                  <input type="text" placeholder="AMS" class="formInputBox">
+                <div class="max-w-1/2">
+                  <label for="consManufacturer">Manufacturer:</label>
+                  <input id="consManufacturer" type="text" placeholder="AMS" class="formInputBox">
                 </div>
-                <div class="max-w-48">
-                  <label>Serial Number:</label>
-                  <input type="text" placeholder="005512-0114-HD" class="formInputBox">
+                <div class="max-w-1/2">
+                  <label for="consDiameter">Diameter:</label>
+                  <input id="consDiameter" type="text" placeholder="165mm" class="formInputBox">
                 </div>
               </div>
               <div class="flex justify-between gap-x-8 my-2">
-                <div class="max-w-48">
-                  <label>Diameter</label>
-                  <input type="text" class="formInputBox" placeholder="165mm">
-                </div>
-                <div class="max-w-48 flex flex-row gap-x-15">
-                  <div class="">
-                    <input type="checkbox">
-                    <label>New</label>
-                  </div>
-                  <div>
-                    <input type="checkbox">
-                    <label>Run Out</label>
-                  </div>
+                <div class="w-full">
+                  <label for="consSerial">Serial Number:</label>
+                  <input id="consSerial" type="text" class="formInputBox" placeholder="005512-0114-HD">
                 </div>
               </div>
             </form>
@@ -278,19 +269,19 @@
             <div class="flex flex-wrap justify-between mt-2 text-center">
               <div class="basis-1/2 md:basis-1/4 p-2">
                 <p>Current Meters:</p>
-                <p>178.7m</p>
+                <p id="consCurrentMeters">178.7m</p>
               </div>
               <div class="basis-1/2 md:basis-1/4 p-2">
                 <p>Average Meters:</p>
-                <p>270.1m</p>
+                <p id="consAvgMeters">270.1m</p>
               </div>
               <div class="basis-1/2 md:basis-1/4 p-2">
                 <p>Consumable Manufacturer:</p>
-                <p>AMS</p>
+                <p id="dispConsManufacturer">AMS</p>
               </div>
               <div class="basis-1/2 md:basis-1/4 p-2">
                 <p>Serial Number:</p>
-                <p>005512-0114-HD</p>
+                <p id="dispConsSerial">005512-0114-HD</p>
               </div>
             </div>
           </div>

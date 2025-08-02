@@ -39,6 +39,7 @@ function navListener() {
         const selectedPage = contentTarget[target];
         if (selectedPage) {
           selectedPage.classList.remove('hidden');
+          
         } else {
           console.warn(`No page found for: ${target}`);
         }
