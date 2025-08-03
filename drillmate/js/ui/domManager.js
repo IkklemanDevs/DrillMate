@@ -1,5 +1,4 @@
-// This module locates and exports a dom object
-
+// This module locates and exports a DOM object
 
 export const DOM = {
     UI: {
