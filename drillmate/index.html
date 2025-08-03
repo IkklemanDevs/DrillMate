@@ -298,11 +298,14 @@
         <!-- Profile Page Container -->
         <div class="m-4 flex flex-col md:flex-row max-w-6xl">
           <!-- Profile/Sidebar Container -->
-          <div class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-4 border-1 rounded-sm">
-            <div class="name-card">
-              <div id="displayPicture">
-
+          <div class="w-full md:w-1/3 mb-4 pt-4 px-2 md:mb-0 md:mr-4 border-1 rounded-sm">
+            <!-- Name + Image Container -->
+            <div class="name-card flex flex-row  mb-8 items-center">
+              <!-- Image Container -->
+              <div id="displayPicture" class="mr-4 items-center flex md:grow-1">
+                <img class="w-full align-middle inline-block" width="260" height="260" src="assets/images/account-circle.svg">
               </div>
+              <!-- Name and Role Container -->
               <div id="name-container">
                 <div>
                   <p class="font-bold text-2xl">Jack Davies</p>
@@ -311,6 +314,16 @@
                   <p>Drill Operator</p>
                 </div>
               </div>
+            </div>
+            <div class="mb-2 border-1 rounded-sm align-middle">
+              <button class="w-full flex flex-row gap-x-2">
+                <div class="">
+                  <img src="assets/images/status-away.svg">
+                </div>
+                <div>
+                  <p>Set your status!</p>
+                </div>
+              </button>
             </div>
           </div>
           <!-- Contributions/History Container -->
