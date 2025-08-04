@@ -13,28 +13,23 @@
     <script type="module" src="./js/script-handler.js"></script>
     <title>DrillMate</title>
   </head>
-
   <body class="font-display">
-
     <header class="px-6 py-4 sticky top-0 bg-gray-200 md:relative">
       <div class="flex flex-row justify-between">
         <p class="">DrillMate</p>
         <button class="" id="navMenu"><p>Menu</p></button>
       </div>
     </header>
-
     <navbar class="hidden" id="navbar">
       <div class="text-center py-4">
         <ul class="">
           <li><button data-menu="dashboard">Dashboard</button></li>
           <li><button data-menu="consumables">Consumables</button></li>
-          <li><button data-menu="history">History</button></li>
           <li><button data-menu="profile">Profile</button></li>
           <li><button data-menu="login">Sign In</button></li>
         </ul>
       </div>
     </navbar>
-
 <!-- Page Container -->
     <div id="pageContainer" class="px-3 py-1">
 <!-- Dashboard Content -->
@@ -287,23 +282,21 @@
           </div>
         </div>
       </section>
-<!-- History Content -->
-      <section id="history" data-page="history" class="hidden m-1">
-        <div class="text-center m-4">
-          <h3>History</h3>
-        </div>
-      </section>
 <!-- Profile Content -->
       <section id="profile" data-page="profile" class="hidden m-1">
         <!-- Profile Page Container -->
-        <div class="m-4 flex flex-col md:flex-row max-w-6xl">
+        <div class="m-4 flex flex-col md:flex-row max-w-full">
           <!-- Profile/Sidebar Container -->
-          <div class="w-full md:w-1/3 mb-4 pt-4 px-2 md:mb-0 md:mr-4 border-1 rounded-sm">
+          <div class="w-full md:w-1/3 mb-4 pt-4 px-2 md:mb-0 md:mr-4 ">
             <!-- Name + Image Container -->
-            <div class="name-card flex flex-row  mb-8 items-center">
+            <div class="name-card flex flex-row md:flex-col mb-8 items-center">
               <!-- Image Container -->
-              <div id="displayPicture" class="mr-4 items-center flex md:grow-1">
-                <img class="w-full align-middle inline-block" width="260" height="260" src="assets/images/account-circle.svg">
+              <div id="displayPicture" class="mr-4">
+                <button>
+                  <div class="items-center flex flex-wrap md:w-3xs shrink">
+                    <img class="w-full align-middle inline-block" src="assets/images/account-circle.svg">
+                  </div>
+                </button> 
               </div>
               <!-- Name and Role Container -->
               <div id="name-container">
@@ -315,14 +308,64 @@
                 </div>
               </div>
             </div>
+            <!-- Status Container -->
             <div class="mb-2 border-1 rounded-sm align-middle">
-              <button class="w-full flex flex-row gap-x-2">
+              <button class="w-full flex flex-row items-center gap-x-2 p-0.5">
                 <div class="">
-                  <img src="assets/images/status-away.svg">
+                  <img class="w-4 h-4 items-center" src="assets/images/status-away.svg">
                 </div>
-                <div>
-                  <p>Set your status!</p>
+                <div class="box-border">
+                  <p class="h-full text-sm align-text-bottom">Set your status!</p>
                 </div>
+              </button>
+            </div>
+            <!-- Status Form -->
+            <div class="border-1 rounded-sm h-auto p-2 hidden">
+              <form id="userStatusForm" class="h-full w-full">
+                <div class="flex flex-row justify-between align-middle h-6 mb-6">
+                  <div>
+                    <p class="font-bold text-sm">Edit Status</p>
+                  </div>
+                  <div>
+                    <button class="bg-gray-300 rounded-sm drop-shadow-sm"><img src="assets/images/close-small.svg"></button>
+                  </div>
+                </div>
+                <div class="w-full flex flex-row border-1 rounded-sm mb-1">
+                  <button class="px-2 py-1 border-r-1 bg-gray-200 rounded-l-sm" id="emoji-picker">😁</button>
+                  <input id="user-status" class="bg-gray-100 rounded-sm w-full px-2 py-1" type="text" placeholder="How are you feeling this swing?">
+                </div>
+                <div class="hidden">
+                  <emoji-picker></emoji-picker>
+                </div>
+                <div class="mt-2 mb-4">
+                  <p class="text-sm font-light">Customise your profile by sharing your mood for the swing!</p>
+                </div>
+              </form>
+              <div class="border-t-1 h-6 w-full my-2">
+                <div class="flex flex-row justify-around gap-x-1 text-center align-middle py-2">
+                  <div class="border-1 rounded-sm w-1/2">
+                    <button id="confirmUserStatus" type="submit">Confirm!</button>
+                  </div>
+                  <div class="border-1 rounded-sm w-1/2">
+                    <button>Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Biography Form -->
+            <!-- Biography Container -->
+            <div class="mb-2 ">
+              <div>
+                <p>
+                  I am a beginner programmer, currently working in the mining industry in 
+                  Western Australia.
+                </p>
+              </div>
+            </div>
+            <!-- Edit Profile -->
+            <div class="mb-2 border-1 rounded-sm align-middle text-center">
+              <button class="w-full">
+                <p class="font-bold text-sm">Edit Profile</p>
               </button>
             </div>
           </div>

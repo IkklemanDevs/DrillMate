@@ -15,6 +15,7 @@
     "@material/web": "^2.3.0",
     "@tailwindcss/vite": "^4.1.11",
     "chart.js": "^4.5.0",
+    "emoji-picker-element": "^1.26.3",
     "tailwindcss": "^4.1.11"
   }
 }
