@@ -18,9 +18,23 @@
     --color-text-muted: hsl(0 0% 30%);
 }
 
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
 button:hover {
     cursor: pointer;
     
+}
+
+.button-hover {
+    @apply rounded-full hover:bg-gray-400/20;
 }
 
 .formCard {
@@ -41,4 +55,20 @@ button:hover {
 
 .drillLogCard {
     @apply border-1 border-black px-2 py-1 mb-1 text-sm
+}
+
+.bioInputBox {
+    @apply bg-gray-100 rounded-sm w-full px-2 py-1 border-1
+}
+
+.bioInputDiv {
+    @apply w-full flex flex-col gap-y-1 mb-2
+}
+
+.bioWorkplaceInput {
+    @apply flex flex-row gap-x-2 mb-2
+}
+
+.bioList {
+    @apply flex items-center gap-x-2
 }

@@ -9,27 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./js/script-handler.js"></script>
     <title>DrillMate</title>
   </head>
   <body class="font-display">
-    <header class="px-6 py-4 sticky top-0 bg-gray-200 md:relative">
-      <div class="flex flex-row justify-between">
-        <p class="">DrillMate</p>
-        <button class="" id="navMenu"><p>Menu</p></button>
-      </div>
-    </header>
-    <navbar class="hidden" id="navbar">
-      <div class="text-center py-4">
-        <ul class="">
-          <li><button data-menu="dashboard">Dashboard</button></li>
-          <li><button data-menu="consumables">Consumables</button></li>
-          <li><button data-menu="profile">Profile</button></li>
-          <li><button data-menu="login">Sign In</button></li>
-        </ul>
-      </div>
-    </navbar>
+    
+      <header class="h-16 px-6 py-4 sticky top-0 bg-gray-200 md:relative">
+        <div class="flex flex-row justify-between">
+          <button class="" id="navMenu">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <p class="">DrillMate</p>
+        </div>
+      </header>
+      
+      <navbar class="hidden shadow-lg" id="navbar">
+        <div class="text-center py-4 border-b-1 border-black">
+          <ul class="space-y-3">
+            <li><button data-menu="dashboard">Dashboard</button></li>
+            <li><button data-menu="consumables">Consumables</button></li>
+            <li><button data-menu="profile">Profile</button></li>
+            <li><button data-menu="login">Sign In</button></li>
+          </ul>
+        </div>
+      </navbar>
+   
 <!-- Page Container -->
     <div id="pageContainer" class="px-3 py-1">
 <!-- Dashboard Content -->
@@ -44,7 +50,11 @@
             <div class="my-2">
               <p class="text-center">Shift Overview</p>
             </div>
-            <div class="flex justify-between m-2 text-center gap-x-8">
+            <!-- Statistics Placeholder -->
+            <div id="dashOverviewPlaceholder" class="text-center text-gray-400 text-sm italic py-8">
+              <p>More data is required before displaying statistics.</p>
+            </div>
+            <div class="hidden flex justify-between m-2 text-center gap-x-8">
               <ul class="text-sm w-32">
                 <li>Total Meters:</li>
                 <li id="soTotalMeters">128.9m</li>
@@ -65,14 +75,22 @@
               <div class="border-1 rounded-sm min-h-[250px] px-2 md:w-1/2">
                 <div class="">
                   <ul class="flex flex-row justify-between my-2">
-                    <li><button id="newHoleEntry">Add</button></li>
+                    <li>
+                      <button id="newHoleEntry" type="button">
+                        <span class="material-symbols-outlined button-hover">add</span>
+                      </button>
+                    </li>
                     <li>Drill Log</li>
-                    <li><button id="editHoleEntry">Edit</button></li>
+                    <li>
+                      <button id="editHoleEntry" type="button">
+                        <span class="material-symbols-outlined button-hover">edit</span>
+                      </button>
+                    </li>
                   </ul>
                 </div>
                 <!-- Drill Log Placeholder -->
-                  <div class="text-center text-gray-400 text-sm italic py-8">
-                    No drill data yet. Add a new entry to get started.
+                  <div id="dashLogPlaceholder" class="text-center text-gray-400 text-sm italic py-8">
+                    <p>No drill data yet. Add a new entry to get started.</p>
                   </div>
                 <!-- Form Target // Drill Log Card-->
                 <div class="drillLogCard hidden">
@@ -100,7 +118,7 @@
                 </div>
                 <!-- Drill Log Form -->
                  <div class="hidden" id="drillForm">
-                    <form class="formCard">
+                    <form id="drillLog" class="formCard">
                       <div class="text-center">
                         <p>Hole Data Input</p>
                       </div>
@@ -123,12 +141,16 @@
                           <option value="sixty">60</option>
                         </select>
                       </div>
+                      <div>
+                        <label for="holePattern" class="block text-sm font-medium">Bench/Shot Location:</label>
+                        <input id="holePattern" type="text" placeholder="C3 180 307" class="formInputBox">
+                      </div>
                       <div class="space-x-1 inline">
                         <input id="keepConfig" type="checkbox">
                         <label for="keepConfig" class="">Remember Selection</label>
                       </div>
-                      <div class="w-full flex justify-between flex-row">
-                        <div class="w-1/2 pr-2">
+                      <div class="w-full flex justify-between flex-row gap-x-2">
+                        <div class="w-1/2">
                             <label class="formLabelNB" for="holeNumber">Hole Number:</label>
                             <input id="holeNumber" type="text" placeholder="D1722" class="formInputBox">
                         </div>
@@ -137,8 +159,8 @@
                           <input id="holeTime" type="time" class="formInputBox">
                         </div>
                       </div>
-                      <div class="w-full flex justify-between flex-row">
-                        <div class="w-1/2 pr-2">
+                      <div class="w-full flex gap-x-2 justify-between flex-row">
+                        <div class="w-1/2">
                           <label for="designDepth" class="formLabelNB">Designed Depth:</label>
                           <input id="designDepth" class="formInputBox" placeholder="11.7m">
                         </div>
@@ -147,7 +169,16 @@
                           <input id="drilledDepth" class="formInputBox" placeholder="12.1m">
                         </div>
                       </div>
+                      <div class="flex flex-row justify-around gap-x-2 text-center align-middle py-2">
+                        <div class="border-1 rounded-sm w-1/2">
+                          <button form="drillLog" id="confirmHoleLog" type="submit" class="w-full">Confirm!</button>
+                        </div>
+                        <div class="border-1 rounded-sm w-1/2" >
+                          <button id="closeHoleLog" class="w-full" type="button">Cancel</button>
+                        </div>
+                      </div>
                     </form>
+                    
                  </div>
               </div>
               <!-- Shift + Drill Statistics -->
@@ -160,7 +191,11 @@
                 <div class="w-full min-h-[250px] md:h-[400px]">
                   <canvas id="weeklyPerformance"></canvas>
                 </div>
-                <div class="flex flex-wrap justify-between mt-2 text-center">
+                <!-- No Data Placeholder  -->
+                <div id="dashWeeklyPlaceholder" class="text-center text-gray-400 text-sm italic py-8">
+                    <p>No drill data yet.</p>
+                </div>
+                <div class="hidden flex flex-wrap justify-between mt-2 text-center">
                   <div class="basis-1/2 md:basis-1/4 p-2">
                     <p>Total Meters:</p>
                     <p id="statTotalMeters">378.7m</p>
@@ -193,7 +228,10 @@
             <div class="my-2">
               <p class="text-center">Current Equipment:</p>
             </div>
-            <div class="flex justify-between m-2 text-center gap-x-8">
+            <div id="consPlaceholder" class="text-center text-gray-400 text-sm italic py-6">
+              <p>No equipment has been selected.</p>
+            </div>
+            <div id="currentConsumables" class="flex justify-between m-2 text-center gap-x-8 hidden">
               <ul class="text-sm w-32">
                 <li>Current Bit:</li>
                 <li id="currentBit">AMS 005512-0114-HD</li>
@@ -204,12 +242,12 @@
               </ul>  
             </div>
             <div class="text-center">
-              <button class="pt-2 italic text-sm font-light">Change Equipment</button>
+              <button id="changeConsumables" type="button" class="pt-2 italic text-sm font-light">Change Equipment</button>
             </div>
           </div>
           <!-- New Consumable Form -->
           <div id="consFormCont" class="my-4 border-1 rounded-sm p-1 px-2 hidden">
-            <form>
+            <form id="consumableForm">
               <div class="text-center mt-2 mb-4">
                 <p>Enter New Consumable</p>
               </div>
@@ -237,6 +275,14 @@
                 <div class="w-full">
                   <label for="consSerial">Serial Number:</label>
                   <input id="consSerial" type="text" class="formInputBox" placeholder="005512-0114-HD">
+                </div>
+              </div>
+              <div class="flex flex-row justify-around gap-x-2 text-center align-middle py-2">
+                <div class="border-1 rounded-sm w-1/2">
+                  <button id="confirmConsForm" type="submit" class="w-full">Confirm!</button>
+                </div>
+                <div class="border-1 rounded-sm w-1/2" >
+                  <button id="closeConsForm" class="w-full" type="button">Cancel</button>
                 </div>
               </div>
             </form>
@@ -287,12 +333,12 @@
         <!-- Profile Page Container -->
         <div class="m-4 flex flex-col md:flex-row max-w-full">
           <!-- Profile/Sidebar Container -->
-          <div class="w-full md:w-1/3 mb-4 pt-4 px-2 md:mb-0 md:mr-4 ">
+          <div class="w-full md:max-w-1/3 mb-4 pt-4 px-2 md:mb-0 md:mr-4">
             <!-- Name + Image Container -->
             <div class="name-card flex flex-row md:flex-col mb-8 items-center">
               <!-- Image Container -->
               <div id="displayPicture" class="mr-4">
-                <button>
+                <button type="button">
                   <div class="items-center flex flex-wrap md:w-3xs shrink">
                     <img class="w-full align-middle inline-block" src="assets/images/account-circle.svg">
                   </div>
@@ -300,17 +346,17 @@
               </div>
               <!-- Name and Role Container -->
               <div id="name-container">
-                <div>
-                  <p class="font-bold text-2xl">Jack Davies</p>
+                <div class="md:text-center">
+                  <p id="profileName" class="font-bold text-2xl">Jack Davies</p>
                 </div>
-                <div>
-                  <p>Drill Operator</p>
+                <div class="md:text-center">
+                  <p id="profileOccupation">Drill Operator</p>
                 </div>
               </div>
             </div>
             <!-- Status Container -->
-            <div class="mb-2 border-1 rounded-sm align-middle">
-              <button class="w-full flex flex-row items-center gap-x-2 p-0.5">
+            <div id="statusContainer" class="mb-2 border-1 rounded-sm align-middle">
+              <button id="setStatus" type="button" class="w-full flex flex-row items-center gap-x-2 p-0.5">
                 <div class="">
                   <img class="w-4 h-4 items-center" src="assets/images/status-away.svg">
                 </div>
@@ -320,22 +366,20 @@
               </button>
             </div>
             <!-- Status Form -->
-            <div class="border-1 rounded-sm h-auto p-2 hidden">
+            <div id="statusFormCont" class="border-1 rounded-sm h-auto p-2 hidden">
               <form id="userStatusForm" class="h-full w-full">
                 <div class="flex flex-row justify-between align-middle h-6 mb-6">
                   <div>
                     <p class="font-bold text-sm">Edit Status</p>
                   </div>
-                  <div>
-                    <button class="bg-gray-300 rounded-sm drop-shadow-sm"><img src="assets/images/close-small.svg"></button>
-                  </div>
+                  
                 </div>
                 <div class="w-full flex flex-row border-1 rounded-sm mb-1">
-                  <button class="px-2 py-1 border-r-1 bg-gray-200 rounded-l-sm" id="emoji-picker">😁</button>
-                  <input id="user-status" class="bg-gray-100 rounded-sm w-full px-2 py-1" type="text" placeholder="How are you feeling this swing?">
+                  <button class="px-2 py-1 border-r-1 bg-gray-200 rounded-l-sm" type="button" id="emoji-picker"><p id="placeholderEmoji">😀</p></button>
+                  <input id="userStatus" class="bg-gray-100 rounded-sm w-full px-2 py-1" type="text" placeholder="How are you feeling this swing?">
                 </div>
-                <div class="hidden">
-                  <emoji-picker></emoji-picker>
+                <div id="emojiContainer" class="hidden max-w-fit">
+                  <emoji-picker id="userEmoji"></emoji-picker>
                 </div>
                 <div class="mt-2 mb-4">
                   <p class="text-sm font-light">Customise your profile by sharing your mood for the swing!</p>
@@ -344,34 +388,122 @@
               <div class="border-t-1 h-6 w-full my-2">
                 <div class="flex flex-row justify-around gap-x-1 text-center align-middle py-2">
                   <div class="border-1 rounded-sm w-1/2">
-                    <button id="confirmUserStatus" type="submit">Confirm!</button>
+                    <button id="confirmUserStatus" class="w-full" form="userStatusForm" type="submit">Confirm!</button>
                   </div>
                   <div class="border-1 rounded-sm w-1/2">
-                    <button>Cancel</button>
+                    <button id="closeUserStatus" class="w-full">Cancel</button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- Biography Form -->
+            <div id="bioContainer" class="w-full flex flex-col border-1 pb-2 rounded-sm hidden">
+              <form id="biographyForm" class="flex flex-col w-full p-2">
+                <div class="bioInputDiv">
+                  <label for="bioName" class="font-bold">Name:</label>
+                  <input id="bioName" class="bioInputBox" type="text" placeholder="Name">
+                </div>
+                <div class="bioInputDiv">
+                  <label for="bioDescription" class="font-bold">Bio:</label>
+                  <textarea id="bioDescription" class="bioInputBox h-20" type="text" placeholder="Write a short introduction about yourself!"></textarea>
+                </div>
+                <div>
+                  <div class="bioInputDiv">
+                    <p class="font-bold">Workplace</p>
+                  </div>
+                  <div class="bioWorkplaceInput">
+                    <img src="assets/images/workplace-icon.svg">
+                    <input id="bioWorkplace" class="bioInputBox" type="text" placeholder="Workplace">
+                  </div>
+                  <div class="bioWorkplaceInput">
+                    <img src="assets/images/location-icon.svg">
+                    <input id="bioLocation" class="bioInputBox" type="text" placeholder="Current Site">
+                  </div>
+                  <div class="bioWorkplaceInput">
+                    <img src="assets/images/clock-icon.svg">
+                    <select id="bioRoster" class="bioInputBox">
+                      <option>Roster</option>
+                      <option>8/6 Days</option>
+                      <option>2/1 Weeks</option>
+                      <option>2/2 Weeks</option>
+                      <option>4/2 Weeks</option>
+                    </select>
+                  </div>
+                  <div class="bioWorkplaceInput">
+                    <img src="assets/images/link-icon.svg">
+                    <input id="bioWebsite" class="bioInputBox" type="url" placeholder="Workplace Website">
+                  </div>
+                </div>
+              </form>             
+              <div class=" h-6 w-full mb-2">
+                <div class="flex flex-row justify-around gap-x-1 text-center align-middle px-2">
+                  <div class="border-1 rounded-sm w-1/2">
+                    <button id="confirmBioInput" class="w-full" form="biographyForm" type="submit">Confirm!</button>
+                  </div>
+                  <div class="border-1 rounded-sm w-1/2">
+                    <button id="cancelBioInput" type="button" class="w-full">Cancel</button>
+                  </div>
+                </div>
+              </div>           
+            </div>
             <!-- Biography Container -->
             <div class="mb-2 ">
               <div>
-                <p>
+                <p id="profileBio">
                   I am a beginner programmer, currently working in the mining industry in 
                   Western Australia.
                 </p>
               </div>
+              <div class="md:flex flex-col flex-wrap my-6 h-auto">
+                <ul class="list-none space-y-2">
+                  <li class="bioList">
+                    <img src="assets/images/workplace-icon.svg">
+                    <span id="profileCompany">Mineral Resources</span>
+                  </li>
+                  <li class="bioList">
+                    <img src="assets/images/location-icon.svg">
+                    <span id="profileSite">Wodgina, WA</span>
+                  </li>
+                  <li class="bioList">
+                    <img src="assets/images/clock-icon.svg">
+                    <span id="profileRoster">2 Weeks On, 2 Weeks Off</span>
+                  </li>
+                  <li class="bioList break-words">
+                    <img src="assets/images/link-icon.svg">
+                    <span id="profileLink" class="break-all">
+                      <a href="https://www.mineralresources.com.au/" target="_blank" >https://www.mineralresources.com.au/
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
             <!-- Edit Profile -->
             <div class="mb-2 border-1 rounded-sm align-middle text-center">
-              <button class="w-full">
+              <button id="editProfile" type="button" class="w-full">
                 <p class="font-bold text-sm">Edit Profile</p>
               </button>
             </div>
           </div>
           <!-- Contributions/History Container -->
-          <div class="w-full md:w-2/3 border-1 rounded-sm">
+          <div class="w-full md:w-2/3 p-4">
+            <div class="py-2">
+              <div class="mb-2">
+                <p class="font-medium">Drill Contributions</p>
+              </div>
+              <div class="border-1 rounded-sm p-4"> 
+                  <div
+                    id="heatmap" class="bg-gray-900/5 rounded-sm p-2 grid grid-rows-7 grid-flow-col gap-[2px] overflow-x-auto max-w-full">
+                    <!-- Squares injected here -->
+                  </div>
+                  <div class="mt-2">
+                    <p>Drill Overview</p>
+                  </div>
+                  <div>
 
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

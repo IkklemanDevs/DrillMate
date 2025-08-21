@@ -20,12 +20,12 @@ export function initWeeklyPerformance() {
       datasets: [
         {
           label: "Current Week's Performance (m)",
-          data: ['128.3','48.1','141.1','120.3','148.1','141.1','100.2'],
+          data: ['0'],
           borderWidth: 1
         },
         {
           label: "Last Week's Performance (m)",
-          data: ['123.4', '84.7', '96.1', '141.6', '109.3', '77.8', '132.0'],
+          data: ['0'],
           borderWidth: 1
         }
       ]

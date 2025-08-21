@@ -11,7 +11,7 @@ export function toggleNav() {
         console.log('Menu Pressed');
 
         menuToggle.menuContainer.classList.toggle('hidden');
-        pageContainer.pageContent.classList.toggle('hidden');
+        pageContainer.pageContent.classList.toggle('opacity-20');
     }); 
 
     navListener();
@@ -39,7 +39,8 @@ function navListener() {
         const selectedPage = contentTarget[target];
         if (selectedPage) {
           selectedPage.classList.remove('hidden');
-          
+          menuToggle.menuContainer.classList.toggle('hidden');
+          pageContainer.pageContent.classList.toggle('opacity-100');
         } else {
           console.warn(`No page found for: ${target}`);
         }
@@ -48,6 +49,7 @@ function navListener() {
       console.warn(`Missing DOM Element for: ${key}`);
     }
   });
+
   if (import.meta.env.DEV) {
     const lastPage = localStorage.getItem('devPage');
     const restorePage = contentTarget[lastPage];
