@@ -17,10 +17,15 @@
   <body class="font-display">
     
       <header class="h-16 px-6 py-4 sticky top-0 bg-gray-200 md:relative">
-        <div class="flex flex-row justify-between">
-          <button class="" id="navMenu">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
+        <div class="w-full flex flex-row justify-between">
+          <div class="w-1/3 justify-between">
+            <button class="" id="navMenu">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+            <button id="darkToggle">
+              <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+          </div>
           <p class="">DrillMate</p>
         </div>
       </header>
@@ -94,9 +99,13 @@
                   </div>
                 <!-- Form Target // Drill Log Card-->
                 <div class="drillLogCard hidden">
-                  <div class="w-full flex justify-between">  
+                  <div class="w-full h-6 flex justify-between">  
                     <p class="w-full text-center">#1867</p>
-                    <p>V</p>
+                    <button>
+                      <span class="material-symbols-outlined">
+                      arrow_drop_down
+                      </span>
+                    </button>
                   </div>
                   <!-- Collapsable Hole Information -->
                   <div class="flex flex-row justify-between p-2">
@@ -457,19 +466,19 @@
               <div class="md:flex flex-col flex-wrap my-6 h-auto">
                 <ul class="list-none space-y-2">
                   <li class="bioList">
-                    <img src="assets/images/workplace-icon.svg">
+                    <span class="material-symbols-outlined">work</span>          
                     <span id="profileCompany">Mineral Resources</span>
                   </li>
                   <li class="bioList">
-                    <img src="assets/images/location-icon.svg">
+                    <span class="material-symbols-outlined">location_on</span>
                     <span id="profileSite">Wodgina, WA</span>
                   </li>
                   <li class="bioList">
-                    <img src="assets/images/clock-icon.svg">
+                    <span class="material-symbols-outlined">calendar_month</span>
                     <span id="profileRoster">2 Weeks On, 2 Weeks Off</span>
                   </li>
                   <li class="bioList break-words">
-                    <img src="assets/images/link-icon.svg">
+                    <span class="material-symbols-outlined">link</span>
                     <span id="profileLink" class="break-all">
                       <a href="https://www.mineralresources.com.au/" target="_blank" >https://www.mineralresources.com.au/
                       </a>

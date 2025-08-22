@@ -4,17 +4,40 @@ import { DOM } from "./domManager.js";
 const menuToggle = DOM.UI.menu
 const pageContainer = DOM.UI.content;
 
+
 export function toggleNav() {
-    console.log('Navigation js Loaded');
+  console.log('Navigation js Loaded');
+  navListener();
+};
 
-    menuToggle.navtoggle.addEventListener('click', () => {
-        console.log('Menu Pressed');
+let navIsOpen = false;
+menuToggle.navtoggle.addEventListener('click', () => {
+  console.log('Menu Pressed');
 
-        menuToggle.menuContainer.classList.toggle('hidden');
-        pageContainer.pageContent.classList.toggle('opacity-20');
-    }); 
+  if (navIsOpen) {
+    navbarController('closed');
+  } else {
+    navbarController('open'); 
+  };
+  navIsOpen = !navIsOpen;
+});
 
-    navListener();
+
+
+function navbarController(action){
+
+  if (action === 'open') {
+    menuToggle.menuContainer.classList.remove('hidden');
+    pageContainer.pageContent.classList.add('opacity-20');
+    console.log('navbarController is Open');
+    
+    //navListener();
+  } else if (action === 'closed'){
+    menuToggle.menuContainer.classList.add('hidden');
+    pageContainer.pageContent.classList.remove('opacity-20');
+    console.log('navbarController is Closed');
+    
+  };
 };
 
 function navListener() {
@@ -27,20 +50,22 @@ function navListener() {
     if (button instanceof HTMLElement) {
       button.addEventListener('click', () => {
         const target = button.dataset.menu;
-
+        
         console.log(`clicked: ${target}`);
+        navbarController('closed');
 
         // Hide all pages
         Object.values(contentTarget).forEach(page => {
           page.classList.add('hidden');
+          console.log('navListener hidden all');
         });
 
         // Show selected page
         const selectedPage = contentTarget[target];
         if (selectedPage) {
           selectedPage.classList.remove('hidden');
-          menuToggle.menuContainer.classList.toggle('hidden');
-          pageContainer.pageContent.classList.toggle('opacity-100');
+          console.log('navListener displayed selected page');
+          
         } else {
           console.warn(`No page found for: ${target}`);
         }
