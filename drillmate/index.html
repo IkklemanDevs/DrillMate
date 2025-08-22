@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -21,10 +21,11 @@
         <div class="w-full flex flex-row justify-between">
           <div class="w-1/3 justify-between">
             <button class="" id="navMenu">
-              <span class="material-symbols-outlined dark:text-text">menu</span>
+              <span class="material-symbols-outlined darkClass">menu</span>
             </button>
             <button id="darkToggle">
-              <span class="material-symbols-outlined dark:text-text">dark_mode</span>
+              <div id="darkIndicator" class="hidden"><span class="fixed top-4 material-symbols-outlined darkClass darkToggle">dark_mode</span></div>
+              <div id="lightIndicator" class="hidden"><span class="fixed top-4 material-symbols-outlined">light_mode</span></div>
             </button>
           </div>
           <p class="dark:text-text">DrillMate</p>
@@ -349,9 +350,9 @@
               <!-- Image Container -->
               <div id="displayPicture" class="mr-4">
                 <button type="button">
-                  <div class="items-center flex flex-wrap md:w-3xs shrink">
+                  <div class="items-center flex flex-wrap md:w-3xs grow">
                     <!-- <img class="w-full align-middle inline-block" src="assets/images/account-circle.svg"> -->
-                    <span class="material-symbols-outlined w-full align-middle inline-block md:size-l">account_circle</span>
+                    <span class="material-symbols-outlined w-full align-middle inline-block profile">account_circle</span>
                   </div>
                 </button> 
               </div>
@@ -369,8 +370,7 @@
             <div id="statusContainer" class="mb-2 border-1 rounded-sm align-middle">
               <button id="setStatus" type="button" class="w-full flex flex-row items-center gap-x-2 p-0.5">
                 <div class="">
-                  <img class="w-4 h-4 items-center" src="assets/images/status-away.svg">
-                  
+                  <span class="material-symbols-outlined statusPlane darkClass">travel</span>
                 </div>
                 <div class="box-border">
                   <p class="h-full text-sm align-text-bottom">Set your status!</p>
@@ -378,7 +378,7 @@
               </button>
             </div>
             <!-- Status Form -->
-            <div id="statusFormCont" class="border-1 rounded-sm h-auto p-2 hidden">
+            <div id="statusFormCont" class="border-1 rounded-sm h-auto p-2 mb-4 hidden">
               <form id="userStatusForm" class="h-full w-full">
                 <div class="flex flex-row justify-between align-middle h-6 mb-6">
                   <div>
@@ -386,9 +386,9 @@
                   </div>
                   
                 </div>
-                <div class="w-full flex flex-row border-1 rounded-sm mb-1">
-                  <button class="px-2 py-1 border-r-1 bg-gray-200 rounded-l-sm" type="button" id="emoji-picker"><p id="placeholderEmoji">😀</p></button>
-                  <input id="userStatus" class="bg-gray-100 rounded-sm w-full px-2 py-1" type="text" placeholder="How are you feeling this swing?">
+                <div class="w-full flex flex-row border-1 rounded-sm mb-1 ">
+                  <button class="px-2 py-1 border-r-1 bg-gray-200 rounded-l-sm dark:bg-bg-lighter" type="button" id="emoji-picker"><p id="placeholderEmoji">😀</p></button>
+                  <input id="userStatus" class="bg-gray-100 rounded-sm w-full px-2 py-1 dark:bg-bg-light" type="text" placeholder="How are you feeling this swing?">
                 </div>
                 <div id="emojiContainer" class="hidden max-w-fit">
                   <emoji-picker id="userEmoji"></emoji-picker>
@@ -469,19 +469,19 @@
               <div class="md:flex flex-col flex-wrap my-6 h-auto">
                 <ul class="list-none space-y-2">
                   <li class="bioList">
-                    <span class="material-symbols-outlined">work</span>          
+                    <span class="material-symbols-outlined darkClass">work</span>          
                     <span id="profileCompany">Mineral Resources</span>
                   </li>
                   <li class="bioList">
-                    <span class="material-symbols-outlined">location_on</span>
+                    <span class="material-symbols-outlined darkClass">location_on</span>
                     <span id="profileSite">Wodgina, WA</span>
                   </li>
                   <li class="bioList">
-                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span class="material-symbols-outlined darkClass">calendar_month</span>
                     <span id="profileRoster">2 Weeks On, 2 Weeks Off</span>
                   </li>
                   <li class="bioList break-words">
-                    <span class="material-symbols-outlined">link</span>
+                    <span class="material-symbols-outlined darkClass">link</span>
                     <span id="profileLink" class="break-all">
                       <a href="https://www.mineralresources.com.au/" target="_blank" >https://www.mineralresources.com.au/
                       </a>

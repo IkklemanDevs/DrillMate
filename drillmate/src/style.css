@@ -9,6 +9,7 @@
     --color-bg-dark: hsl(200 100% 3%);
     --color-bg: hsl(250 0% 5%);
     --color-bg-light: hsl(0 0% 10%);
+    --color-bg-lighter: hsl(0 0% 20%);
     --color-text: hsl(0 0% 90%);
     --color-text-muted: hsl(0 0% 70%);
     --border-color: hsl(0 0% 30%);
@@ -33,15 +34,21 @@
 
 button:hover {
     cursor: pointer;
-    
+}
+.darkToggle {
+  text-: ;
 }
 
-span.dark {
-    color: hsl(0 0% 95%);
+span.darkClass {
+    @apply dark:text-text
 }
 
-span.size-m {
-    font-size: 48px;
+.statusPlane {
+    @apply text-[12px] items-center align-middle
+}
+
+span.profile {
+    @apply text-[46px] md:text-[128px] lg:text-[256px]
 }
 
 span.size-l {
@@ -53,11 +60,11 @@ span.size-l {
 }
 
 .formCard {
-    @apply p-4 m-2 bg-white rounded-md shadow-md space-y-4 border border-gray-200 flex flex-col;
+    @apply p-4 m-2 bg-white rounded-md shadow-md space-y-4 border border-gray-200 flex flex-col dark:bg-bg-light;
 }
 
 .formInputBox {
-    @apply bg-white rounded-sm shadow-sm  border border-gray-200 px-1 w-full
+    @apply bg-white rounded-sm shadow-sm  border border-gray-200 px-1 w-full dark:bg-bg-light; 
 }
 
 .formLabel {
@@ -73,7 +80,7 @@ span.size-l {
 }
 
 .bioInputBox {
-    @apply bg-gray-100 rounded-sm w-full px-2 py-1 border-1
+    @apply bg-gray-100 rounded-sm w-full px-2 py-1 border-1 dark:bg-bg-light
 }
 
 .bioInputDiv {

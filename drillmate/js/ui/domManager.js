@@ -8,6 +8,8 @@ export const DOM = {
             menuContainer: document.getElementById('navbar'),
             navtoggle: document.getElementById('navMenu'),
             themeToggle: document.getElementById('darkToggle'),
+            darkIndicator: document.getElementById('darkIndicator'),
+            lightIndicator: document.getElementById('lightIndicator'),
                 menuButtons: {
                     dashboardTog: document.querySelector('[data-menu="dashboard"]'),
                     consumablesTog: document.querySelector('[data-menu="consumables"]'),
