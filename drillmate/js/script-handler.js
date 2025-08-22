@@ -1,4 +1,4 @@
-import { toggleNav } from './ui/navbar.js';
+import { initNavigation } from './ui/navbar.js';
 import { initWeeklyPerformance } from './charts/weeklyPerformance.js';
 import { initConsumableChart } from './charts/consumablePerformance.js';
 import { drillContribution } from './charts/drillContribution.js';
@@ -9,7 +9,7 @@ import { bioToggle } from './profile/biography.js';
 
 
 //Toggle functions
-toggleNav();
+initNavigation();
 toggleDrillForm();
 toggleConsForm ();
 statusToggle();
