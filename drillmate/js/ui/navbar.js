@@ -12,6 +12,20 @@ export function initNavigation() {
   devLoadPage();
 }
 
+menuToggle.themeToggle.addEventListener('click', () => {
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  document.documentElement.classList.toggle("dark");
+  
+  // // Whenever the user explicitly chooses light mode
+  // localStorage.theme = "light";
+  // // Whenever the user explicitly chooses dark mode
+  // localStorage.theme = "dark";
+  // // Whenever the user explicitly chooses to respect the OS preference
+  // localStorage.removeItem("theme");
+
+});
+
 menuToggle.navtoggle.addEventListener('click', () => {
   console.log('Menu Pressed');
   navIsOpen ? navbarController('closed') : navbarController('open');
@@ -78,4 +92,5 @@ function devLoadPage() {
       restorePage.classList.remove('hidden');
     }
   }
-}
+};
+

@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-display: "Raleway", sans-serif;
 /* Dark Mode */
     /* --color-*: initial; */
-    --color-bg-dark: hsl(0 0% 0%);
-    --color-bg: hsl(0 0% 5%);
+    --color-bg-dark: hsl(200 100% 3%);
+    --color-bg: hsl(250 0% 5%);
     --color-bg-light: hsl(0 0% 10%);
-    --color-text: hsl(0 0% 95%);
+    --color-text: hsl(0 0% 90%);
     --color-text-muted: hsl(0 0% 70%);
+    --border-color: hsl(0 0% 30%);
+    --highlight: hsl(0 0% 60%);
 
-/* Light Mode */
+/* Light Mode
     --color-bg-dark: hsl(0 0% 90%);
     --color-bg: hsl(0 0% 95%);
     --color-bg-light: hsl(0 0% 100%);
     --color-text: hsl(0 0% 5%);
-    --color-text-muted: hsl(0 0% 30%);
+    --color-text-muted: hsl(0 0% 30%);*/
 }
 
 
@@ -27,10 +31,21 @@
   'opsz' 24
 }
 
-
 button:hover {
     cursor: pointer;
     
+}
+
+span.dark {
+    color: hsl(0 0% 95%);
+}
+
+span.size-m {
+    font-size: 48px;
+}
+
+span.size-l {
+    font-size: 256px;
 }
 
 .button-hover {

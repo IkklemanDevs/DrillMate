@@ -7,6 +7,7 @@ export const DOM = {
         menu: {
             menuContainer: document.getElementById('navbar'),
             navtoggle: document.getElementById('navMenu'),
+            themeToggle: document.getElementById('darkToggle'),
                 menuButtons: {
                     dashboardTog: document.querySelector('[data-menu="dashboard"]'),
                     consumablesTog: document.querySelector('[data-menu="consumables"]'),
