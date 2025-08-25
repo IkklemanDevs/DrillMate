@@ -6,23 +6,75 @@
     --font-display: "Raleway", sans-serif;
 /* Dark Mode */
     /* --color-*: initial; */
-    --color-bg-dark: hsl(200 100% 3%);
-    --color-bg: hsl(250 0% 5%);
+    --color-bg-dark: hsl(0 0% 3%);
+    --color-bg: hsl(0 0% 5%);
     --color-bg-light: hsl(0 0% 10%);
     --color-bg-lighter: hsl(0 0% 20%);
+    --color-bg-lighterer: hsl(0 0% 30%);
     --color-text: hsl(0 0% 90%);
     --color-text-muted: hsl(0 0% 70%);
-    --border-color: hsl(0 0% 30%);
-    --highlight: hsl(0 0% 60%);
+    --color-bg-border-color: hsl(0 0% 30%);
+    --color-bg-highlight: hsl(0 0% 60%);
 
-/* Light Mode
-    --color-bg-dark: hsl(0 0% 90%);
-    --color-bg: hsl(0 0% 95%);
-    --color-bg-light: hsl(0 0% 100%);
-    --color-text: hsl(0 0% 5%);
-    --color-text-muted: hsl(0 0% 30%);*/
+  /* Ash Gray */
+  --color-ash-gray-100: #202827;
+  --color-ash-gray-200: #40504d;
+  --color-ash-gray-300: #617974;
+  --color-ash-gray-400: #859d99;
+  --color-ash-gray-500: #acbdba;
+  --color-ash-gray-600: #bdcac8;
+  --color-ash-gray-700: #ced8d6;
+  --color-ash-gray-800: #dee5e3;
+  --color-ash-gray-900: #eff2f1;
+
+  /* Azure Web */
+  --color-azure-web-100: #233333;
+  --color-azure-web-200: #456666;
+  --color-azure-web-300: #689999;
+  --color-azure-web-400: #9bbbbb;
+  --color-azure-web-500: #cddddd;
+  --color-azure-web-600: #d8e5e5;
+  --color-azure-web-700: #e2ebeb;
+  --color-azure-web-800: #ecf2f2;
+  --color-azure-web-900: #f5f8f8;
+
+  /* Rose Quartz */
+  --color-rose-quartz-100: #201c26;
+  --color-rose-quartz-200: #41384d;
+  --color-rose-quartz-300: #615473;
+  --color-rose-quartz-400: #827198;
+  --color-rose-quartz-500: #a599b5;
+  --color-rose-quartz-600: #b6acc3;
+  --color-rose-quartz-700: #c8c1d2;
+  --color-rose-quartz-800: #dbd6e1;
+  --color-rose-quartz-900: #edeaf0;
+
+  /* Jet */
+  --color-jet-100: #090909;
+  --color-jet-200: #121313;
+  --color-jet-300: #1b1c1c;
+  --color-jet-400: #242525;
+  --color-jet-500: #2e2f2f;
+  --color-jet-600: #575959;
+  --color-jet-700: #808383;
+  --color-jet-800: #abacac;
+  --color-jet-900: #d5d6d6;
+
+  /* Rich Black */
+  --color-rich-black-100: #010304;
+  --color-rich-black-200: #020708;
+  --color-rich-black-300: #030a0c;
+  --color-rich-black-400: #040d10;
+  --color-rich-black-500: #051014;
+  --color-rich-black-600: #184e62;
+  --color-rich-black-700: #2c8caf;
+  --color-rich-black-800: #64b9d8;
+  --color-rich-black-900: #b1dcec;
 }
 
+.test-bg {
+  background-color: rgb(var(--color-ash-gray-900));
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -31,12 +83,14 @@
   'GRAD' 0,
   'opsz' 24
 }
-
+.border-1 {
+   @apply dark:border-bg-lighterer dark:border-b-2 
+}
 button:hover {
     cursor: pointer;
 }
 .darkToggle {
-  text-: ;
+  
 }
 
 span.darkClass {
@@ -76,7 +130,7 @@ span.size-l {
 }
 
 .drillLogCard {
-    @apply border-1 border-black px-2 py-1 mb-1 text-sm
+    @apply border-1  px-2 py-1 mb-1 text-sm dark:border-bg-lighter dark:border-b-2 dark:border-b-bg-highlight rounded-sm
 }
 
 .bioInputBox {
